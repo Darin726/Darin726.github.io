@@ -44,7 +44,7 @@
             <!--
             {% elseif theme.disqus_shortname %}
             {% endif %}
-            -->
+            End
         {% endif %}
       </div>
 
