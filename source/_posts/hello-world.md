@@ -1,41 +1,22 @@
 ---
 date: 2020-05-14 17:01:34
-title: Hello World
-categories: Info
-tags: test
+title: My Blog
+categories: Mind
+tags: Mind
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
+# 写作
 
-### Create a new post
+好久没写博客了, 总是给自己的理由是太忙, 
+确实也没怎么闲置, 总以各种理由让自己忙起来.
+回过头来看, 自己似乎快要成为积极的废人. 
+一些知识点总是一知半解, 说不会也不是全不会, 说会但是却无法回答的完整. 
+这就是我现在的状态.
 
-``` bash
-$ hexo new "My New Post"
-```
+写作是一件非常难坚持的事情, 自我认知也是一件难以管理的事情.
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+> 但不必太纠结于当下, 也不必太忧虑未来, 当你经历过一些事情以后,  眼前的风景已经和从前不一样了, 人生没有无用的经历, 只要我们一直向前走,  天总会亮.
 
-### Run server
+从今天开始在忙也要抽出时间刷 LeetCode 和完整掌握自己简历上所有的知识点. 
 
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+![pic](http://xxxmyselfxxx.qianlicao.cn/hexo/images/hello-world/fighting.jpg)
