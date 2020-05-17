@@ -17,6 +17,6 @@ tags: Mind
 
 > 但不必太纠结于当下, 也不必太忧虑未来, 当你经历过一些事情以后,  眼前的风景已经和从前不一样了, 人生没有无用的经历, 只要我们一直向前走,  天总会亮.
 
-从今天开始在忙也要抽出时间刷 LeetCode 和完整掌握自己简历上所有的知识点. 
+从今天开始在忙也要抽出时间刷 LeetCode , 以及完整掌握自己简历上所有的知识点. 
 
 ![pic](http://xxxmyselfxxx.qianlicao.cn/hexo/images/hello-world/fighting.jpg)
