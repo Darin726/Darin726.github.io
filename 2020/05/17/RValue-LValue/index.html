@@ -36,18 +36,18 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="左值 &amp; 右值左值和右值，其实这个概念很一直都在，简单回顾一下. 1int lValue &#x3D; 10; 在上面的代码中 lValue 是左值, 10 是右值; 简单来区分就是 &#x3D; 左边的是左值, 右边的是右值.  右值是不能再次被赋值的, 譬如 10 &#x3D; 1 是一个非法的操作. 一个左值也可以转变成右值; 譬如 12int lValue &#x3D; 10;int lValue2 &#x3D; lValue;">
+<meta name="description" content="左值 &amp; 右值左值和右值，其实这个概念一直都在，简单回顾一下. 1int lValue &#x3D; 10; 在上面的代码中 lValue 是左值, 10 是右值; 简单来区分就是 &#x3D; 左边的是左值, 右边的是右值.  右值是不能再次被赋值的, 譬如 10 &#x3D; 1 是一个非法的操作. 一个左值也可以转变成右值; 譬如 12int lValue &#x3D; 10;int lValue2 &#x3D; lValue; l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="c++ 右值引用">
 <meta property="og:url" content="http://yoursite.com/2020/05/17/RValue-LValue/index.html">
 <meta property="og:site_name" content="Darin&#39;s blog">
-<meta property="og:description" content="左值 &amp; 右值左值和右值，其实这个概念很一直都在，简单回顾一下. 1int lValue &#x3D; 10; 在上面的代码中 lValue 是左值, 10 是右值; 简单来区分就是 &#x3D; 左边的是左值, 右边的是右值.  右值是不能再次被赋值的, 譬如 10 &#x3D; 1 是一个非法的操作. 一个左值也可以转变成右值; 譬如 12int lValue &#x3D; 10;int lValue2 &#x3D; lValue;">
+<meta property="og:description" content="左值 &amp; 右值左值和右值，其实这个概念一直都在，简单回顾一下. 1int lValue &#x3D; 10; 在上面的代码中 lValue 是左值, 10 是右值; 简单来区分就是 &#x3D; 左边的是左值, 右边的是右值.  右值是不能再次被赋值的, 譬如 10 &#x3D; 1 是一个非法的操作. 一个左值也可以转变成右值; 譬如 12int lValue &#x3D; 10;int lValue2 &#x3D; lValue; l">
 <meta property="og:image" content="http://images.qianlicao.cn/hexo/images/RValue/8c8b4ec2e7244fd09093564411ea617d.png">
 <meta property="og:image" content="http://images.qianlicao.cn/hexo/images/RValue/a3eab4dbad544100817935291f147b9b.png">
 <meta property="og:image" content="http://images.qianlicao.cn/hexo/images/RValue/9429bc800a474ff3abaf8059852ea8c0.png">
 <meta property="og:image" content="http://images.qianlicao.cn/hexo/images/RValue/a36f1bdab2754cfd9f4302d7baf8260a.png">
 <meta property="article:published_time" content="2020-05-17T01:21:18.000Z">
-<meta property="article:modified_time" content="2020-05-17T14:10:24.205Z">
+<meta property="article:modified_time" content="2020-05-17T16:04:24.368Z">
 <meta property="article:author" content="Darin">
 <meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary">
@@ -226,7 +226,7 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="左值-amp-右值"><a href="#左值-amp-右值" class="headerlink" title="左值 &amp; 右值"></a>左值 &amp; 右值</h2><p>左值和右值，其实这个概念很一直都在，简单回顾一下.</p>
+        <span itemprop="articleBody"><h2 id="左值-amp-右值"><a href="#左值-amp-右值" class="headerlink" title="左值 &amp; 右值"></a>左值 &amp; 右值</h2><p>左值和右值，其实这个概念一直都在，简单回顾一下.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> lValue = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
 <p>在上面的代码中 <code>lValue</code> 是左值, <code>10</code> 是右值; 简单来区分就是 <code>=</code> 左边的是左值, 右边的是右值. </p>
 <p>右值是不能再次被赋值的, 譬如 <code>10 = 1</code> 是一个非法的操作. 一个左值也可以转变成右值; 譬如</p>
