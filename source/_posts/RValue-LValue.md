@@ -8,17 +8,22 @@ tags:
 ---
 
 ## 左值 & 右值
+
 左值和右值，其实这个概念一直都在，简单回顾一下.
+
 ```c++
 int lValue = 10;
 ```
+
 在上面的代码中 `lValue` 是左值, `10` 是右值; 简单来区分就是 `=` 左边的是左值, 右边的是右值. 
 
 右值是不能再次被赋值的, 譬如 `10 = 1` 是一个非法的操作. 一个左值也可以转变成右值; 譬如
+
 ```c++
 int lValue = 10;
 int lValue2 = lValue;
 ```
+
 `lValue2` 是左值, `lValue` 变成右值, 此时操作 `lValue2` 不会对影响 `lValue` 的值. 因为 `lValue2` 是 `lValue` 的一个**拷贝**;
 简单的 int 拷贝消耗的时间和空间是比较小的, 但对于大型的类消耗就大了, 譬如假设有很长一段字符串.
 
@@ -30,6 +35,7 @@ std::cout << "lString = " << lString
           << " & "
           << "lString2 = " << lString2 << std::endl;
 ```
+
 `lString2 = lString` 执行之后, 相当于将 `lString` 内存的内容拷贝到 `lString2`, 我们将 `lString2` 的内容修改也不会影响 `lString` 的内容.
 
 
@@ -47,6 +53,7 @@ std::cout << "lString = " << lString
           << " & "
           << "lString3 = " << lString3 << std::endl;
 ```
+
 `lString3` 其实就像是 `lString` 的别名, 对 `lString3` 内容的任何操作都会影响到 `lString`上, 譬如上面的例子, lString 也会变成 "He**L**lo Darin" ， 这就是**左值引用**。 
 
 ```c++
@@ -186,9 +193,9 @@ MyString(MyString &&rValueString) {
 }
 ```
 
-我们定义一个右值引用的构造函数, 当入参是右值时, 入参左边两个 **"&"**, 直接将指针地址赋值过去, 能够大大减少拷贝的操作. 
+我们定义一个右值引用的构造函数, 当入参是右值时, 入参左边两个 **"&"**, 直接将指针地址赋值过去, 能够大大减少拷贝的操作.  我们称它为**移动构造函数**.
 
-在例如, 我们重写 MyString 的 equal 操作
+在例如, 我们重写 MyString 的 equal 操作 (移动赋值运算符)
 
 ```c++
 MyString operator =(const MyString &copy) {
@@ -234,7 +241,9 @@ void swapRValue(T &a, T &b) {
 
 **在 c++ 11, `std::move` 可以将一个 `LValue` 转换成一个 `RValue`, 要达到很高的转化效率, 前提是 class T 实现了右值的 `operator =` 和 右值拷贝构造函数, 否则拷贝性能还是和原来一样.** 
 
-**总结: 右值引用能够避免深度拷贝, 而 std::move 能够将一个左值引用转换成右值引用**
+**总结: 右值引用能够避免深度拷贝, 而 std::move 能够将一个左值引用转换成右值引用** 
+
+由于移动构造函数和移动赋值操作符的实现方式存在不确定性, 故使用 `std::move` 一定要绝对确认移后源对象没有其它访问者. 
 
 ## 右值引用是右值吗?
 
