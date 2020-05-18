@@ -174,7 +174,7 @@ l_constructor is called
 
 ![fd3f302ef5d9afdc90aae86850b66666.png](http://images.qianlicao.cn/hexo/images/RValue/a36f1bdab2754cfd9f4302d7baf8260a.png)
 
-继续说构造函数, 在上述场景下, 拷贝构造函数还是会进行一次深度拷贝, 如果不需要深度拷贝该怎么办呢, 这个时候右值引用就可以出场了. 
+继续说构造函数, 在上述场景下, 拷贝构造函数还是会进行一次深度拷贝, 如果不需要深度拷贝该怎么办呢, 这个时候就可以用右值引用了. 
 
 ```c++
 MyString(MyString &&rValueString) {
