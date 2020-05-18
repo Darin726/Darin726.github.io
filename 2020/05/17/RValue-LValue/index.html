@@ -47,7 +47,7 @@
 <meta property="og:image" content="http://images.qianlicao.cn/hexo/images/RValue/9429bc800a474ff3abaf8059852ea8c0.png">
 <meta property="og:image" content="http://images.qianlicao.cn/hexo/images/RValue/a36f1bdab2754cfd9f4302d7baf8260a.png">
 <meta property="article:published_time" content="2020-05-17T01:21:18.000Z">
-<meta property="article:modified_time" content="2020-05-17T16:04:24.368Z">
+<meta property="article:modified_time" content="2020-05-18T14:57:05.108Z">
 <meta property="article:author" content="Darin">
 <meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary">
@@ -277,7 +277,7 @@
 <p>但如果将函数改为 <code>void func(MyString&amp; copy)</code> l_constructor 就不会被调用, 完美的减少了一次拷贝的操作. </p>
 <p>值得一提的是左值引用一般要和 const 进行搭配, 否则在 func 里我们可以操作原值.</p>
 <p><img src="http://images.qianlicao.cn/hexo/images/RValue/a36f1bdab2754cfd9f4302d7baf8260a.png" alt="fd3f302ef5d9afdc90aae86850b66666.png"></p>
-<p>继续说构造函数, 在上述场景下, 拷贝构造函数还是会进行一次深度拷贝, 如果不需要深度拷贝该怎么办呢, 这个时候右值引用就可以出场了. </p>
+<p>继续说构造函数, 在上述场景下, 拷贝构造函数还是会进行一次深度拷贝, 如果不需要深度拷贝该怎么办呢, 这个时候就可以用右值引用了. </p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">MyString(MyString &amp;&amp;rValueString) &#123;</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"r_constructor is called"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">  size_ = rValueString.size_;</span><br><span class="line">  buffer_ = rValueString.buffer_;</span><br><span class="line">  rValueString.buffer_ = <span class="literal">nullptr</span>;</span><br><span class="line">  rValueString.size_ = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>我们定义一个右值引用的构造函数, 当入参是右值时, 入参左边两个 <strong>“&amp;”</strong>, 直接将指针地址赋值过去, 能够大大减少拷贝的操作. </p>
