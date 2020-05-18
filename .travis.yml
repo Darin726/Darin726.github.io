@@ -14,6 +14,7 @@ script:
   - echo y | ./ossutil64 rm oss://${ossName}/ -r
   - ./ossutil64 cp -r public/ oss://${ossName}/
   - cp CNAME public/
+  - curl https://sc.ftqq.com/${ftqq_TOKEN}.send?text=Blog+Build+Succeed
 
 deploy:
   provider: pages
