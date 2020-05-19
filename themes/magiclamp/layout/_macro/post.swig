@@ -8,7 +8,7 @@
         <h1 class="post-title" itemprop="name headline">
           {# Link posts #}
           {% if post.link %}
-            <a class="post-title-link post-title-link-external" target="_blank" href="{{ url_for(post.link) }}" itemprop="url">
+            <a class="post-title-link post-title-link-external" target="_blank" href="{{ url_for(post.link) }}index.html" itemprop="url">
               {{ post.title or post.link }}
               <i class="icon-external-link"></i>
             </a>
