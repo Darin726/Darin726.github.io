@@ -39,7 +39,7 @@ std::cout << "lString = " << lString
 `lString2 = lString` 执行之后, 相当于将 `lString` 内存的内容拷贝到 `lString2`, 我们将 `lString2` 的内容修改也不会影响 `lString` 的内容.
 
 
-![e66d093753756658168ed247200ac46b.png](http://images.qianlicao.cn/hexo/images/RValue/8c8b4ec2e7244fd09093564411ea617d.png)
+![e66d093753756658168ed247200ac46b.png](https://images.qianlicao.cn/hexo/images/RValue/8c8b4ec2e7244fd09093564411ea617d.png)
 
 
 ## 左值引用 & 右值引用
@@ -141,12 +141,12 @@ OK 你会发现可以正常运行. 但上面的代码是不完整的，`buffer_`
 原因是因为, 默认的拷贝构造函数, 是将 `buffer_` 指针的地址拷贝过去
 
 如图 `debug` 所示, `str` 和 `temp` 内 `buffer_` 地址一模一样
-![be6a213db3b28e08fe878f34e50612ce.png](http://images.qianlicao.cn/hexo/images/RValue/a3eab4dbad544100817935291f147b9b.png)
+![be6a213db3b28e08fe878f34e50612ce.png](https://images.qianlicao.cn/hexo/images/RValue/a3eab4dbad544100817935291f147b9b.png)
 
 
 当 `temp` 释放` buffer_` 指向的内容时, `str` 内部的 `buffer_` 指向的内容也就释放了, 再次释放数组就会出现上述错误. 
 
-![752f3bae8e0948625d608b057d78ee86.png](http://images.qianlicao.cn/hexo/images/RValue/9429bc800a474ff3abaf8059852ea8c0.png)
+![752f3bae8e0948625d608b057d78ee86.png](https://images.qianlicao.cn/hexo/images/RValue/9429bc800a474ff3abaf8059852ea8c0.png)
 
 这明显不是我们期望的, 所以这里就需要自行实现一个深度拷贝构造函数. 
 
@@ -179,7 +179,7 @@ l_constructor is called
 值得一提的是左值引用一般要和 const 进行搭配, 否则在 func 里我们可以操作原值.
 
 
-![fd3f302ef5d9afdc90aae86850b66666.png](http://images.qianlicao.cn/hexo/images/RValue/a36f1bdab2754cfd9f4302d7baf8260a.png)
+![fd3f302ef5d9afdc90aae86850b66666.png](https://images.qianlicao.cn/hexo/images/RValue/a36f1bdab2754cfd9f4302d7baf8260a.png)
 
 继续说构造函数, 在上述场景下, 拷贝构造函数还是会进行一次深度拷贝, 如果不需要深度拷贝该怎么办呢, 这个时候就可以用右值引用了. 
 

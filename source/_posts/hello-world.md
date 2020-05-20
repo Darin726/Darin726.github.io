@@ -19,4 +19,4 @@ tags: Mind
 
 从今天开始在忙也要抽出时间刷 LeetCode , 以及完整掌握自己简历上所有的知识点. 
 
-![pic](http://xxxmyselfxxx.qianlicao.cn/hexo/images/hello-world/fighting.jpg)
+![pic](https://images.qianlicao.cn/hexo/images/hello-world/fighting.jpg)
