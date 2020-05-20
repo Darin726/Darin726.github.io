@@ -42,16 +42,16 @@
 <meta property="og:url" content="http://yoursite.com/RValue-LValue/index.html">
 <meta property="og:site_name" content="Darin&#39;s blog">
 <meta property="og:description" content="左值 &amp; 右值左值和右值，其实这个概念一直都在，简单回顾一下. 1int lValue &#x3D; 10;  在上面的代码中 lValue 是左值, 10 是右值; 简单来区分就是 &#x3D; 左边的是左值, 右边的是右值.  右值是不能再次被赋值的, 譬如 10 &#x3D; 1 是一个非法的操作. 一个左值也可以转变成右值; 譬如 12int lValue &#x3D; 10;int lValue2 &#x3D; lValue;">
-<meta property="og:image" content="http://images.qianlicao.cn/hexo/images/RValue/8c8b4ec2e7244fd09093564411ea617d.png">
-<meta property="og:image" content="http://images.qianlicao.cn/hexo/images/RValue/a3eab4dbad544100817935291f147b9b.png">
-<meta property="og:image" content="http://images.qianlicao.cn/hexo/images/RValue/9429bc800a474ff3abaf8059852ea8c0.png">
-<meta property="og:image" content="http://images.qianlicao.cn/hexo/images/RValue/a36f1bdab2754cfd9f4302d7baf8260a.png">
+<meta property="og:image" content="https://images.qianlicao.cn/hexo/images/RValue/8c8b4ec2e7244fd09093564411ea617d.png">
+<meta property="og:image" content="https://images.qianlicao.cn/hexo/images/RValue/a3eab4dbad544100817935291f147b9b.png">
+<meta property="og:image" content="https://images.qianlicao.cn/hexo/images/RValue/9429bc800a474ff3abaf8059852ea8c0.png">
+<meta property="og:image" content="https://images.qianlicao.cn/hexo/images/RValue/a36f1bdab2754cfd9f4302d7baf8260a.png">
 <meta property="article:published_time" content="2020-05-17T01:21:18.000Z">
-<meta property="article:modified_time" content="2020-05-19T23:41:17.284Z">
+<meta property="article:modified_time" content="2020-05-20T13:27:02.807Z">
 <meta property="article:author" content="Darin">
 <meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://images.qianlicao.cn/hexo/images/RValue/8c8b4ec2e7244fd09093564411ea617d.png">
+<meta name="twitter:image" content="https://images.qianlicao.cn/hexo/images/RValue/8c8b4ec2e7244fd09093564411ea617d.png">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -237,7 +237,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::<span class="built_in">string</span> lString = <span class="string">"Hello Darin"</span>;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">string</span> lString2 = lString;</span><br><span class="line">lString2[<span class="number">2</span>] = <span class="string">'L'</span>;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"lString = "</span> &lt;&lt; lString</span><br><span class="line">          &lt;&lt; <span class="string">" &amp; "</span></span><br><span class="line">          &lt;&lt; <span class="string">"lString2 = "</span> &lt;&lt; lString2 &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
 
 <p><code>lString2 = lString</code> 执行之后, 相当于将 <code>lString</code> 内存的内容拷贝到 <code>lString2</code>, 我们将 <code>lString2</code> 的内容修改也不会影响 <code>lString</code> 的内容.</p>
-<p><img src="http://images.qianlicao.cn/hexo/images/RValue/8c8b4ec2e7244fd09093564411ea617d.png" alt="e66d093753756658168ed247200ac46b.png"></p>
+<p><img src="https://images.qianlicao.cn/hexo/images/RValue/8c8b4ec2e7244fd09093564411ea617d.png" alt="e66d093753756658168ed247200ac46b.png"></p>
 <h2 id="左值引用-amp-右值引用"><a href="#左值引用-amp-右值引用" class="headerlink" title="左值引用 &amp; 右值引用"></a>左值引用 &amp; 右值引用</h2><p>继续上面的例子, 我们申明了一个新的 <code>std::string &amp;lString3 = lString;</code></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::<span class="built_in">string</span> &amp;lString3 = lString;</span><br><span class="line">lString3[<span class="number">2</span>] = <span class="string">'L'</span>;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"lString = "</span> &lt;&lt; lString</span><br><span class="line">          &lt;&lt; <span class="string">" &amp; "</span></span><br><span class="line">          &lt;&lt; <span class="string">"lString3 = "</span> &lt;&lt; lString3 &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
 
@@ -267,9 +267,9 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(18057,0x10ed435c0) malloc: *** error for object 0x7fc509c029b0: pointer being freed was not allocated</span><br><span class="line">(18057,0x10ed435c0) malloc: *** set a breakpoint in malloc_error_break to debug</span><br></pre></td></tr></table></figure>
 
 <p>原因是因为, 默认的拷贝构造函数, 是将 <code>buffer_</code> 指针的地址拷贝过去</p>
-<p>如图 <code>debug</code> 所示, <code>str</code> 和 <code>temp</code> 内 <code>buffer_</code> 地址一模一样<br><img src="http://images.qianlicao.cn/hexo/images/RValue/a3eab4dbad544100817935291f147b9b.png" alt="be6a213db3b28e08fe878f34e50612ce.png"></p>
+<p>如图 <code>debug</code> 所示, <code>str</code> 和 <code>temp</code> 内 <code>buffer_</code> 地址一模一样<br><img src="https://images.qianlicao.cn/hexo/images/RValue/a3eab4dbad544100817935291f147b9b.png" alt="be6a213db3b28e08fe878f34e50612ce.png"></p>
 <p>当 <code>temp</code> 释放<code>buffer_</code> 指向的内容时, <code>str</code> 内部的 <code>buffer_</code> 指向的内容也就释放了, 再次释放数组就会出现上述错误. </p>
-<p><img src="http://images.qianlicao.cn/hexo/images/RValue/9429bc800a474ff3abaf8059852ea8c0.png" alt="752f3bae8e0948625d608b057d78ee86.png"></p>
+<p><img src="https://images.qianlicao.cn/hexo/images/RValue/9429bc800a474ff3abaf8059852ea8c0.png" alt="752f3bae8e0948625d608b057d78ee86.png"></p>
 <p>这明显不是我们期望的, 所以这里就需要自行实现一个深度拷贝构造函数. </p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">MyString(MyString &amp;lValueString) &#123;</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"l_constructor is called"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">  size_ = lValueString.size_;</span><br><span class="line">  buffer_ = <span class="keyword">new</span> <span class="keyword">char</span>[size_ + <span class="number">1</span>];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size_; i++) &#123;</span><br><span class="line">    buffer_[i] = lValueString.buffer_[i];</span><br><span class="line">  &#125;<span class="comment">//memcpy(buffer_, lValueString.buffer_, size_);</span></span><br><span class="line">  buffer_[size_] = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -280,7 +280,7 @@
 
 <p>但如果将函数改为 <code>void func(MyString&amp; copy)</code> l_constructor 就不会被调用, 完美的减少了一次拷贝的操作. </p>
 <p>值得一提的是左值引用一般要和 const 进行搭配, 否则在 func 里我们可以操作原值.</p>
-<p><img src="http://images.qianlicao.cn/hexo/images/RValue/a36f1bdab2754cfd9f4302d7baf8260a.png" alt="fd3f302ef5d9afdc90aae86850b66666.png"></p>
+<p><img src="https://images.qianlicao.cn/hexo/images/RValue/a36f1bdab2754cfd9f4302d7baf8260a.png" alt="fd3f302ef5d9afdc90aae86850b66666.png"></p>
 <p>继续说构造函数, 在上述场景下, 拷贝构造函数还是会进行一次深度拷贝, 如果不需要深度拷贝该怎么办呢, 这个时候就可以用右值引用了. </p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">MyString(MyString &amp;&amp;rValueString) &#123;</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"r_constructor is called"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">  size_ = rValueString.size_;</span><br><span class="line">  buffer_ = rValueString.buffer_;</span><br><span class="line">  rValueString.buffer_ = <span class="literal">nullptr</span>;</span><br><span class="line">  rValueString.size_ = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
