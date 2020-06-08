@@ -7,3 +7,4 @@ public/
 .deploy*/
 .SynologyWorkingDirectory/
 .SynologyWorkingDirectory/*
+nohup.out
